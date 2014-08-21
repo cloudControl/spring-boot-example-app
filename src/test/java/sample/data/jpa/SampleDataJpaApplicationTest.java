@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -42,6 +43,6 @@ public class SampleDataJpaApplicationTest {
 	public void testHome() throws Exception {
 
 		this.mvc.perform(get("/")).andExpect(status().isOk())
-				.andExpect(content().string("Bath"));
+				.andExpect(content().string(containsString("Bath")));
 	}
 }

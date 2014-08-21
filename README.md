@@ -1,6 +1,6 @@
 # Spring boot example app 
 Sample app using Spring-boot stack with Hibernate and MySQL. 
-Based on jpa + jetty samples at https://github.com/spring-projects/spring-boot
+Based on jpa, jetty and freemarker samples at 4444
 
 ## Development
 * Build and test
@@ -46,10 +46,12 @@ Add MySQLs Add-on:
 $ cctrlapp APP_NAME/default addon.add mysqls.free
 ~~~
 
-Deploy your app (increase container size to meet high memory consumption by spring framework):
-
+Deploy your app :
+ 
 ~~~bash
 $ cctrlapp APP_NAME/default deploy --memory 768MB
 ~~~
+The --memory=768MB argument increases the container size to meet the high memory consumption of the Spring framework. Please note: increasing the size comes with additional costs.
 
 **Congratulations, you should now be able to reach your application at http://APP_NAME.cloudcontrolled.com.**
+
